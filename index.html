@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizWiz</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img src="images/logo.png" width="300px" class="mb-4" />
+      </div>
+      <div class="card quiz-body card-border">
+        <div class="card w-50 mt-5 p-3 m-auto text-center card-border">
+          <div class="card-bod">
+            <h1 id="greeting">Ready to explore? Choose a topic</h1>
+          </div>
+        </div>
+
+        <div class="row mx-5 pb-3">
+          <div class="col">
+            <div
+              class="img-card img-fluid card m-auto mt-4"
+              style="width: 300px; height: 220px"
+            >
+              <img
+                src="/images/sports.jpg"
+                class="card-img img-fluid"
+                alt="sports"
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <div class="d-grid gap-2 col-6">
+                  <a
+                    class="img-btn btn btn-lg"
+                    role="button"
+                    onclick="goToTopicPage('sports')"
+                    id="sports-btn"
+                    >Sports</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-3">
+            <div
+              class="img-card img-fluid card m-auto mt-4"
+              style="width: 300px; height: 220px"
+            >
+              <img
+                src="/images/geography.png"
+                class="card-img img-fluid"
+                alt="geography"
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <div class="d-grid gap-2 col-6">
+                  <a
+                    class="img-btn btn btn-lg"
+                    role="button"
+                    onclick="goToTopicPage('geography')"
+                    id="geography-btn"
+                    >Geography</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-2">
+            <div
+              class="img-card img-fluid card m-auto mt-4"
+              style="width: 300px; height: 220px"
+            >
+              <img
+                src="/images/history5.jpg"
+                class="card-img img-fluid"
+                alt="history"
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <div class="d-grid gap-2 col-6">
+                  <a
+                    class="img-btn btn btn-lg"
+                    onclick="goToTopicPage('history')"
+                    role="button"
+                    id="history-btn"
+                    >History</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="quizData.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      // Get input from the user
+      function handleUserWelcome() {
+        let userName = localStorage.getItem("userName");
+
+        // Check if there is a username in local storage
+        if (!userName || userName === "" || userName === "null") {
+          userName = prompt("Hello, what is your name?");
+
+          if (userName !== "" && userName !== null) {
+            localStorage.setItem("userName", userName);
+          } else {
+            // Confirm if user wants to proceed with no username
+            const confirmation = confirm(
+              "Are you sure you want to proceed without setting a username?"
+            );
+            if (confirmation) {
+              userName = "Quiz Whiz";
+              localStorage.setItem("userName", userName);
+            } else {
+              handleUserWelcome();
+              return;
+            }
+          }
+        }
+
+        // Update the welcome Header
+        const welcomeHeader = document.getElementById("greeting");
+        welcomeHeader.innerHTML = `Welcome, ${userName}. Ready to explore? Choose a topic:`;
+      }
+
+      handleUserWelcome();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizWiz</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c38dce8968.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img src="images/logo.png" width="300px" class="mb-4" />
+      </div>
+
+      <div class="w-50 m-auto">
+        <div class="card m-auto mb-3 p-3">
+          <div class="card-body" id="quiz-results-container">
+            <div>
+              <div>
+                <h5 class="text-center">
+                  <i id="results-icon" style="font-size: 120px"></i>
+                </h5>
+                <h5 class="card-title mt-3 my-3 p-3 text-center">
+                  Congratulations!! You have reached the end of the Quiz.
+                  <br />
+                </h5>
+                <h5 class="text-center mt-4 mb-5 fs-3" id="quiz-results">></h5>
+                <div
+                  id="results-message"
+                  class="fw-semibold fst-italic my-4 text-center fw-bold"
+                  style="color: rgb(118, 94, 6)"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="options-btn btn float-end" href="/index.html" role="button"
+          ><i
+            class="fa-solid fa-chevron-left"
+            style="color: rgb(126, 125, 125)"
+          >
+          </i>
+          Try again</a
+        >
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="quizData.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Retrieve the number of correct answers from local storage
+        const correctAnswers = localStorage.getItem("correctAnswerCounter");
+        // Display the results page with the number of correct answers
+        const quizResults = document.getElementById("quiz-results");
+        if (quizResults) {
+          quizResults.textContent = `You have ${correctAnswers} correct answer(s)`;
+
+          // Display results container based on number of correct answers
+          const results = document.getElementById("results");
+          const resultsMessage = document.getElementById("results-message");
+          const resultsIcon = document.getElementById("results-icon");
+
+          if (correctAnswers >= 5) {
+            resultsIcon.classList.add("fa-solid", "fa-award");
+            resultsIcon.style.color = "#fab005";
+            resultsMessage.textContent = `
+      Awesome Work! You are officially a Quizzineous!`;
+          } else {
+            resultsIcon.classList.add("fa-solid", "fa-medal");
+            resultsIcon.style.color = "#1FA2D4";
+            resultsMessage.textContent = "Nice attempt.";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

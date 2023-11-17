@@ -1,0 +1,75 @@
+body {
+  background: #f4f4f4;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 25px;
+}
+.img-card {
+  box-shadow: 5px 5px 5px gray;
+}
+
+.card-border {
+  border: 1px solid #66177f;
+}
+
+.quiz-body {
+  background: #c5bddc;
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.img-btn {
+  position: absolute;
+  top: 40%;
+  left: 32%;
+  background-color: white;
+  border: 1px solid #66177f;
+  color: #66177f;
+  font-weight: 600;
+}
+
+.img-btn:hover {
+  background: #66177f;
+  color: white;
+}
+
+.quiz-question {
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px gray;
+  max-width: 600px;
+}
+
+.btn-answer {
+  background: #66177f;
+  color: white;
+}
+
+.btn-answer:hover {
+  font-size: 20px;
+  border: 1px solid #66177f;
+  box-shadow: 4px 4px 4px gray;
+}
+
+.btn-js:hover {
+  color: black;
+}
+.next-btn {
+  box-shadow: 4px 4px 4px gray;
+  border: 1px solid black;
+}
+
+.next-btn:hover {
+  border: 1px solid #66177f;
+  color: #66177f;
+  box-shadow: 5px 5px 5px black;
+}
+
+.options-btn {
+  border: 1px solid #cf769f;
+}
+.options-btn:hover {
+  background: #cf769f;
+  color: white;
+}
