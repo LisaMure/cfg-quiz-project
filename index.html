@@ -20,7 +20,11 @@
       <div class="card quiz-body card-border">
         <div class="card w-50 mt-5 p-3 m-auto text-center card-border">
           <div class="card-bod">
-            <h1 id="greeting">Ready to explore? Choose a topic</h1>
+            <h1 id="greeting">
+              Ready to explore?
+              <br />
+              Choose a topic
+            </h1>
           </div>
         </div>
 
@@ -137,7 +141,9 @@
 
         // Update the welcome Header
         const welcomeHeader = document.getElementById("greeting");
-        welcomeHeader.innerHTML = `Welcome, ${userName}. Ready to explore? Choose a topic:`;
+        welcomeHeader.innerHTML = `Welcome, ${userName}. Ready to explore? 
+         <br>
+        Choose a topic:`;
       }
 
       handleUserWelcome();
