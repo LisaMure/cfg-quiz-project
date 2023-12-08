@@ -73,3 +73,13 @@ h1 {
   background: #cf769f;
   color: white;
 }
+
+@media (max-width: 576px) {
+  .results-container {
+    width: 80% !important;
+  }
+
+  .quiz-results-content {
+    font-size: 14px !important;
+  }
+}

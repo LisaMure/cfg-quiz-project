@@ -17,12 +17,12 @@
     ></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container mx-auto">
       <div>
         <img src="images/logo.png" width="300px" class="mb-4" />
       </div>
 
-      <div class="w-50 m-auto">
+      <div class="w-50 mx-auto results-container">
         <div class="card m-auto mb-3 p-3">
           <div class="card-body" id="quiz-results-container">
             <div>
@@ -30,11 +30,18 @@
                 <h5 class="text-center">
                   <i id="results-icon" style="font-size: 120px"></i>
                 </h5>
-                <h5 class="card-title mt-3 my-3 p-3 text-center">
+                <h5
+                  class="card-title quiz-results-content mt-3 my-3 p-3 text-center"
+                >
                   Congratulations!! You have reached the end of the Quiz.
                   <br />
                 </h5>
-                <h5 class="text-center mt-4 mb-5 fs-3" id="quiz-results">></h5>
+                <h5
+                  class="text-center quiz-results-content mt-4 mb-5 fs-3"
+                  id="quiz-results"
+                >
+                  >
+                </h5>
                 <div
                   id="results-message"
                   class="fw-semibold fst-italic my-4 text-center fw-bold"
